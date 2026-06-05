@@ -1,0 +1,86 @@
+html, input {
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 2em;
+}
+.headerContainer {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    background: tomato;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+form {
+    margin-top: 50px;
+}
+div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+label, input, button {
+    font-size: 16px;
+    line-height: 1.5;
+}
+label {
+    text-align: right;
+    width: 30%;
+    margin-right: 2%;
+}
+input {
+    flex: auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="range"] {
+    flex: 1;
+    margin-right: 10px;
+}
+button {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+error-output {
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    width: 100%;
+    text-align: right;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    label {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    input {
+        width: 100%;
+    }
+    div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    button {
+        width: 100%;
+    }
+    error-output {
+        text-align: left;
+    }
+}
