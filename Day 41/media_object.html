@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Object Layout</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #fff; }
+        h1 { margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .media {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fdfdfd;
+        }
+        .media-figure {
+            margin-right: 20px;
+        }
+        .media-figure img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+        .media-body {
+            flex: 1;
+        }
+        .media-body h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        .media-body p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Object Layouts</h1>
+    
+    <div class="media">
+        <div class="media-figure">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 1">
+        </div>
+        <div class="media-body">
+            <h3>John Doe</h3>
+            <p>This is a classic media object layout. It's an image to the left, with descriptive content to the right. Flexbox makes this pattern incredibly robust and easy to implement without relying on floats.</p>
+        </div>
+    </div>
+
+    <div class="media">
+        <div class="media-figure">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 2">
+        </div>
+        <div class="media-body">
+            <h3>Jane Smith</h3>
+            <p>The media object can be used for comments, tweets, product listings, and many other UI components where an image and text need to be aligned side-by-side.</p>
+        </div>
+    </div>
+</body>
+</html>

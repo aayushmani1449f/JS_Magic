@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Website Layout</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #35424a; color: #ffffff; padding-top: 30px; min-height: 70px; border-bottom: #e8491d 3px solid; }
+        header a { color: #ffffff; text-decoration: none; text-transform: uppercase; font-size: 16px; }
+        header ul { padding: 0; margin: 0; list-style: none; }
+        header li { float: left; display: inline; padding: 0 20px 0 20px; }
+        header #branding { float: left; }
+        header #branding h1 { margin: 0; }
+        header nav { float: right; margin-top: 10px; }
+        .showcase { min-height: 400px; background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center; text-align: center; color: #ffffff; }
+        .showcase h1 { margin-top: 100px; font-size: 55px; margin-bottom: 10px; text-shadow: 2px 2px 4px #000; }
+        .showcase p { font-size: 20px; text-shadow: 1px 1px 2px #000; }
+        .main-col { float: left; width: 65%; }
+        .sidebar { float: right; width: 30%; background: #333; color: #fff; padding: 15px; box-sizing: border-box; }
+        footer { padding: 20px; margin-top: 20px; color: #ffffff; background-color: #e8491d; text-align: center; clear: both; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span style="color:#e8491d">Web</span> Design</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="showcase">
+        <div class="container">
+            <h1>Professional Web Design</h1>
+            <p>A beautiful sample layout applied to our class concepts.</p>
+        </div>
+    </section>
+    <div class="container" style="margin-top: 20px;">
+        <div class="main-col">
+            <h2>Welcome</h2>
+            <p>This layout uses floats, container sizing, and clean typography to demonstrate a classic sample website structure.</p>
+        </div>
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Additional information and links can be placed here.</p>
+        </aside>
+    </div>
+    <footer>
+        <p>Web Design &copy; 2026</p>
+    </footer>
+</body>
+</html>
