@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #82a70c;
+    --text-color: #42515f;
+    --bg-color: #f7f7f9;
+    --card-bg: #ffffff;
+    --border-color: #e2e2e2;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+header {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.logo-text span {
+    color: var(--text-color);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    padding: 40px 60px;
+}
+
+.form-header, .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2, .table-header h2 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* Form Styles */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    width: 150px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"], 
+.form-group select, 
+.form-group textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-body);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-radio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-radio img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.date-group {
+    display: flex;
+    gap: 15px;
+}
+
+.date-group select {
+    width: 120px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button.cancel, button.reset {
+    background-color: var(--border-color);
+    color: #333;
+}
+
+button.submit {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: #333;
+}
+
+button.add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: var(--text-color);
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-cell img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dept-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.dept-hr { background-color: #BEECA5; }
+.dept-sales { background-color: #E9FCA3; }
+.dept-finance { background-color: #A9DDB2; }
+.dept-engineer { background-color: #A0D9E6; }
+.dept-others { background-color: #A2A8E9; }
+
+.action-icons {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.action-icons span {
+    color: var(--text-color);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 5px 15px;
+    background: white;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+}

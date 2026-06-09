@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-content">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="logo" width="40" height="40">
+            <div class="logo-text">EMPLOYEE<br><span>PAYROLL</span></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-header">
+            <h2>Employee Payroll Form</h2>
+        </div>
+
+        <form id="payrollForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Profile image</label>
+                <div class="radio-group">
+                    <label class="profile-radio">
+                        <input type="radio" name="profilePic" value="https://randomuser.me/api/portraits/women/44.jpg" required>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile 1">
+                    </label>
+                    <label class="profile-radio">
+                        <input type="radio" name="profilePic" value="https://randomuser.me/api/portraits/men/46.jpg">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Profile 2">
+                    </label>
+                    <label class="profile-radio">
+                        <input type="radio" name="profilePic" value="https://randomuser.me/api/portraits/women/47.jpg">
+                        <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Profile 3">
+                    </label>
+                    <label class="profile-radio">
+                        <input type="radio" name="profilePic" value="https://randomuser.me/api/portraits/men/48.jpg">
+                        <img src="https://randomuser.me/api/portraits/men/48.jpg" alt="Profile 4">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="department" value="HR"> HR</label>
+                    <label><input type="checkbox" name="department" value="Sales"> Sales</label>
+                    <label><input type="checkbox" name="department" value="Finance"> Finance</label>
+                    <label><input type="checkbox" name="department" value="Engineer"> Engineer</label>
+                    <label><input type="checkbox" name="department" value="Others"> Others</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <select id="salary" required>
+                    <option value="" disabled selected>Select Salary</option>
+                    <option value="10000">₹ 10,000</option>
+                    <option value="20000">₹ 20,000</option>
+                    <option value="30000">₹ 30,000</option>
+                    <option value="40000">₹ 40,000</option>
+                    <option value="50000">₹ 50,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Start Date</label>
+                <div class="date-group">
+                    <select id="day" required>
+                        <option value="" disabled selected>Day</option>
+                        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                        <option value="29">29</option>
+                    </select>
+                    <select id="month" required>
+                        <option value="" disabled selected>Month</option>
+                        <option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Oct">Oct</option>
+                    </select>
+                    <select id="year" required>
+                        <option value="" disabled selected>Year</option>
+                        <option value="2020">2020</option><option value="2019">2019</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes"></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="cancel" onclick="window.location.href='home.html'">Cancel</button>
+                <div class="btn-group">
+                    <button type="submit" class="submit">Submit</button>
+                    <button type="reset" class="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="payroll_form.js"></script>
+</body>
+</html>
