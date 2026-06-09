@@ -1,44 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('payrollForm');
-    const employeeList = document.getElementById('employeeList');
+const list = document.getElementById('employeeList'), $ = id => document.getElementById(id);
 
-    // Load existing employees from local storage
-    const loadEmployees = () => {
-        const employees = JSON.parse(localStorage.getItem('employees')) || [];
-        employeeList.innerHTML = '';
-        employees.forEach(emp => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${emp.name}</td>
-                <td>${emp.role}</td>
-                <td>$${parseFloat(emp.salary).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
-            `;
-            employeeList.appendChild(row);
-        });
-    };
+const load = async () => {
+    try {
+        const res = await fetch('/Employee.json');
+        const emps = await res.json();
+        list.innerHTML = emps.map(e => `<tr><td>${e.name}</td><td>${e.role}</td><td>$${Number(e.salary).toLocaleString('en',{minimumFractionDigits:2})}</td></tr>`).join('');
+        return emps;
+    } catch(err) {
+        return [];
+    }
+};
 
-    // Initial load
-    loadEmployees();
+load();
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Get values from the form
-        const name = document.getElementById('name').value;
-        const role = document.getElementById('role').value;
-        const salary = document.getElementById('salary').value;
-
-        const newEmployee = { name, role, salary };
-
-        // Save to local storage
-        const employees = JSON.parse(localStorage.getItem('employees')) || [];
-        employees.push(newEmployee);
-        localStorage.setItem('employees', JSON.stringify(employees));
-
-        // Reload the list
-        loadEmployees();
-
-        // Clear the form
-        form.reset();
+$('payrollForm').onsubmit = async e => {
+    e.preventDefault();
+    
+    // Get current list
+    const emps = await load();
+    
+    // Add new employee
+    emps.push({ name: $('name').value, role: $('role').value, salary: $('salary').value });
+    
+    // Send to server to write to file
+    await fetch('/save', {
+        method: 'POST',
+        body: JSON.stringify(emps, null, 4)
     });
-});
+    
+    load();
+    e.target.reset();
+};
